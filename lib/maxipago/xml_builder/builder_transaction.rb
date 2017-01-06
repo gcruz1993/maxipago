@@ -34,7 +34,6 @@ module Maxipago
                     xml.expMonth self.options[:exp_month]
                     xml.expYear self.options[:exp_year]
                     xml.cvvNumber self.options[:cvv_number] unless self.options[:cvv_number].nil?
-                    xml.eCommInd "eci"
                   }
                 }
               }
@@ -101,7 +100,6 @@ module Maxipago
                     xml.expMonth self.options[:exp_month]
                     xml.expYear self.options[:exp_year]
                     xml.cvvNumber self.options[:cvv_number] unless self.options[:cvv_number].nil?
-                    xml.eCommInd "eci"
                   }
                 }
               }
@@ -168,7 +166,6 @@ module Maxipago
                       xml.expMonth self.options[:exp_month]
                       xml.expYear self.options[:exp_year]
                       xml.cvvNumber self.options[:cvv_number] unless self.options[:cvv_number].nil?
-                      xml.eCommInd "eci"
                     }
                   }
                 }
@@ -259,7 +256,6 @@ module Maxipago
                         xml.expMonth self.options[:exp_month]
                         xml.expYear self.options[:exp_year]
                         xml.cvvNumber self.options[:cvv_number] unless self.options[:cvv_number].nil?
-                        xml.eCommInd "eci"
                       }
                     else
                       xml.onFile {
@@ -372,7 +368,6 @@ module Maxipago
                         xml.expMonth self.options[:exp_month]
                         xml.expYear self.options[:exp_year]
                         xml.cvvNumber self.options[:cvv_number] unless self.options[:cvv_number].nil?
-                        xml.eCommInd "eci"
                       }
                     else
                       xml.onFile {
