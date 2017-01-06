@@ -16,7 +16,7 @@ describe Maxipago::Client do
   end
 
   it "response should be nil" do
-    @mp.response.should eq(nil)
+    expect(@mp.response).to eq(nil)
   end
 
   it "executes a command raises an exception when request is nil" do

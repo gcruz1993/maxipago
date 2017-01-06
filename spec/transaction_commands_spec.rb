@@ -41,7 +41,7 @@ describe Maxipago::Client do
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
                     charge_total: "1.98" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#capture" do
@@ -54,7 +54,7 @@ describe Maxipago::Client do
                     order_id: "0AF90437:013E8F22A46F:94D9:01EC3389",
                     reference_num: "21312",
                     charge_total: "1.98" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#sale" do
@@ -73,7 +73,7 @@ describe Maxipago::Client do
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
                     charge_total: "2.99" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#sale (declined)" do
@@ -92,7 +92,7 @@ describe Maxipago::Client do
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
                     charge_total: "2.99" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#sale (fraud)" do
@@ -111,7 +111,7 @@ describe Maxipago::Client do
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
                     charge_total: "2.98" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#sale (fraud revision)" do
@@ -130,7 +130,7 @@ describe Maxipago::Client do
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
                     charge_total: "2.98" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#void" do
@@ -141,7 +141,7 @@ describe Maxipago::Client do
       @mp.use(transaction)
       @mp.execute({ command: "void",
                     transaction_id: "505107" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#reversal" do
@@ -154,7 +154,7 @@ describe Maxipago::Client do
                     order_id: "0AF90437:013E8F8BA24E:B68E:00DF7C9C",
                     reference_num: "21312",
                     charge_total: "10.00" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#recurring" do
@@ -176,7 +176,7 @@ describe Maxipago::Client do
                     frequency: "1",
                     installments: "5",
                     failure_threshold: "1" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#bank_bill" do
@@ -199,7 +199,7 @@ describe Maxipago::Client do
                     expiration_date: "2013-05-15",
                     number: "10000001",
                     charge_total: "10.00" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#bank_bill (exists)" do
@@ -222,7 +222,7 @@ describe Maxipago::Client do
                     expiration_date: "2013-05-15",
                     number: "10000000",
                     charge_total: "10.00" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#online_debit" do
@@ -245,7 +245,7 @@ describe Maxipago::Client do
                     billing_email: "foo@bar.com",
                     parameters_url: "id=123456&tp=3",
                     charge_total: "10.00" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#sale (token)" do
@@ -260,7 +260,7 @@ describe Maxipago::Client do
                     customer_id: "12837",
                     token: "Fmj2jBtkxG0=",
                     charge_total: "10.00" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#recurring (token)" do
@@ -280,7 +280,7 @@ describe Maxipago::Client do
                     frequency: "1",
                     installments: "5",
                     failure_threshold: "1" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#save_on_file" do
@@ -308,7 +308,7 @@ describe Maxipago::Client do
                     onfile_end_date: "12/25/2020",
                     charge_total: "10.00" })
 
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
   end
 end
