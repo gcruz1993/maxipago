@@ -35,7 +35,7 @@ describe Maxipago::Client do
                     customer_id_ext: "1",
                     firstname: "Foo",
                     lastname: "Bar" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#add_customer (customer_id_ext not exists)" do
@@ -57,7 +57,7 @@ describe Maxipago::Client do
                     email: "foo@bar.com",
                     dob: "08/03/1980",
                     sex: "M" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#delete_consumer" do
@@ -68,7 +68,7 @@ describe Maxipago::Client do
       @mp.use(api)
       @mp.execute({ command: "delete_consumer",
                     customer_id: "1156" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#update_consumer (customer_id_ext not exists)" do
@@ -92,7 +92,7 @@ describe Maxipago::Client do
                     email: "foo@bar.com",
                     dob: "08/03/1980",
                     sex: "M" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#update_consumer (customer_id_ext exists)" do
@@ -115,7 +115,7 @@ describe Maxipago::Client do
                     email: "foo@bar.com",
                     dob: "08/03/1980",
                     sex: "M" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#add_card_onfile" do
@@ -142,7 +142,7 @@ describe Maxipago::Client do
                     onfile_permissions: "ongoing",
                     onfile_comment: "Cartao 1",
                     onfile_max_charge_amount: "500.00" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#delete_card_onfile" do
@@ -154,7 +154,7 @@ describe Maxipago::Client do
       @mp.execute({ command: "delete_card_onfile",
                     customer_id: "11008",
                     token: "5e3K+bwTdBg=" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#cancel_recurring" do
@@ -168,7 +168,7 @@ describe Maxipago::Client do
                     maxid: setup[:maxid],
                     apikey: setup[:apikey],
                     order_id: "0AF90437:013E8F9BAAA9:5A38:01849C5C" }) 
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
   end
 end

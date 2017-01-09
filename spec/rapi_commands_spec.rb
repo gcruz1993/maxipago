@@ -29,7 +29,7 @@ describe Maxipago::Client do
       @mp.use(rapi)
       @mp.execute({ command: "one_transaction_report",
                     transaction_id: "530368" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
 
     it "#list_transactions_report" do
@@ -41,7 +41,7 @@ describe Maxipago::Client do
       @mp.execute({ command: "list_transactions_report",
                     period: "today",
                     pagesize: "1" })
-      @mp.response[:body].should eq(body)
+      expect(@mp.response[:body]).to eq(body)
     end
   end
 end
