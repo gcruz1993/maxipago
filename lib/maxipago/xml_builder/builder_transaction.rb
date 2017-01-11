@@ -38,6 +38,7 @@ module Maxipago
                 }
               }
               xml.payment {
+                xml.currencyCode self.options[:currency_code] unless self.options[:currency_code].nil?
                 xml.chargeTotal self.options[:charge_total]
               }
               xml.saveOnFile {
@@ -104,6 +105,7 @@ module Maxipago
                 }
               }
               xml.payment {
+                xml.currencyCode self.options[:currency_code] unless self.options[:currency_code].nil?
                 xml.chargeTotal self.options[:charge_total]
                 unless self.options[:number_of_installments].nil?
                   xml.creditInstallment {
@@ -170,6 +172,7 @@ module Maxipago
                   }
                 }
                 xml.payment {
+                  xml.currencyCode self.options[:currency_code] unless self.options[:currency_code].nil?
                   xml.chargeTotal self.options[:charge_total]
                   unless self.options[:number_of_installments].nil?
                     xml.creditInstallment {
@@ -266,6 +269,7 @@ module Maxipago
                   }
                 }
                 xml.payment {
+                  xml.currencyCode self.options[:currency_code] unless self.options[:currency_code].nil?
                   xml.chargeTotal self.options[:charge_total]
                   unless self.options[:number_of_installments].nil?
                     xml.creditInstallment {
@@ -312,6 +316,7 @@ module Maxipago
                 xml.orderID self.options[:order_id]
                 xml.referenceNum self.options[:reference_num]
                 xml.payment {
+                  xml.currencyCode self.options[:currency_code] unless self.options[:currency_code].nil?
                   xml.chargeTotal self.options[:charge_total]
                 }
               }
@@ -378,6 +383,7 @@ module Maxipago
                   }
                 }
                 xml.payment {
+                  xml.currencyCode self.options[:currency_code] unless self.options[:currency_code].nil?
                   xml.chargeTotal self.options[:charge_total]
                 }
                 xml.recurring {

@@ -40,6 +40,7 @@ describe Maxipago::Client do
                     exp_month: setup[:exp_month],
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
+                    currency_code: 'BRL',
                     charge_total: "1.98" })
       expect(@mp.response[:body]).to eq(body)
     end
@@ -72,6 +73,7 @@ describe Maxipago::Client do
                     exp_month: setup[:exp_month],
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
+                    currency_code: 'BRL',
                     charge_total: "2.99" })
       expect(@mp.response[:body]).to eq(body)
     end
@@ -91,6 +93,7 @@ describe Maxipago::Client do
                     exp_month: setup[:exp_month],
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
+                    currency_code: 'BRL',
                     charge_total: "2.99" })
       expect(@mp.response[:body]).to eq(body)
     end
@@ -110,6 +113,7 @@ describe Maxipago::Client do
                     exp_month: setup[:exp_month],
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
+                    currency_code: 'BRL',
                     charge_total: "2.98" })
       expect(@mp.response[:body]).to eq(body)
     end
@@ -129,6 +133,7 @@ describe Maxipago::Client do
                     exp_month: setup[:exp_month],
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
+                    currency_code: 'BRL',
                     charge_total: "2.98" })
       expect(@mp.response[:body]).to eq(body)
     end
@@ -170,6 +175,7 @@ describe Maxipago::Client do
                     exp_month: setup[:exp_month],
                     exp_year: setup[:exp_year],
                     cvv_number: setup[:cvv],
+                    currency_code: 'BRL',
                     charge_total: "2.98",
                     start_date: "2013-05-10",
                     period: "monthly",
@@ -259,6 +265,7 @@ describe Maxipago::Client do
                     reference_num: "21313",
                     customer_id: "12837",
                     token: "Fmj2jBtkxG0=",
+                    currency_code: 'BRL',
                     charge_total: "10.00" })
       expect(@mp.response[:body]).to eq(body)
     end
@@ -274,6 +281,7 @@ describe Maxipago::Client do
                     reference_num: "21313",
                     customer_id: "12837",
                     token: "Fmj2jBtkxG0=",
+                    currency_code: 'BRL',
                     charge_total: "2.98",
                     start_date: "2013-05-10",
                     period: "monthly",
@@ -306,6 +314,7 @@ describe Maxipago::Client do
                     cvv_number: setup[:cvv],
                     customer_id: "10958",
                     onfile_end_date: "12/25/2020",
+                    currency_code: 'BRL',
                     charge_total: "10.00" })
 
       expect(@mp.response[:body]).to eq(body)
