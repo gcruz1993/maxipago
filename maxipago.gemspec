@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "nokogiri", "~> 1.6.0"
+  spec.add_dependency 'dotenv', '~> 2.0'
   spec.add_development_dependency "rspec", "~> 2.13.0"
   spec.add_development_dependency "fakeweb", "~> 1.3.0"
 end

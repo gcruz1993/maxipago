@@ -20,10 +20,11 @@ module Maxipago
       private
 
       def send_request(xml)
-        Rails.logger.info("=== SEND REQUEST") if defined?(Rails)
-        Rails.logger.info(xml) if defined?(Rails)
         set_uri
         set_http_session
+        Rails.logger.info("=== SEND REQUEST") if defined?(Rails)
+        Rails.logger.info(@uri.host + @uri.path) if defined?(Rails)
+        Rails.logger.info(xml) if defined?(Rails)
 
         @http_session.start { |http|
           response = http.post(@uri.path, xml, @header)
