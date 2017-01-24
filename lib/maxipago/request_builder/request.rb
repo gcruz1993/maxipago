@@ -5,9 +5,10 @@ module Maxipago
   module RequestBuilder
     class Request
 
-      def initialize(maxid, apikey)
+      def initialize(maxid, apikey, options = {})
         @maxid = maxid
         @apikey = apikey
+        @url = options[:url]
         @api_version = Maxipago::Client::APIVERSION
         @header = { "Content-Type" => 'text/xml' }
       end

@@ -4,12 +4,11 @@ require 'uri'
 module Maxipago
   module RequestBuilder
     class RapiRequest < Maxipago::RequestBuilder::Request
-      URL = ENV['MP_URL_RAPI'] || "https://testapi.maxipago.net/ReportsAPI/servlet/ReportsAPI"
-
       private
 
       def set_uri
-        @uri = URI.parse(URL)
+        url = @url || ENV['MP_URL_RAPI']
+        @uri = URI.parse(url)
       end
 
       def build_xml(opts)
